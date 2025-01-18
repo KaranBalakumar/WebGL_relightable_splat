@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 	<head>
-		<title>WebGL Gaussian Splat Viewer</title>
+		<title>Relightable Gaussian Splats</title>
 		<meta charset="utf-8" />
 		<meta
 			name="viewport"
@@ -155,6 +155,17 @@
 				z-index: 999;
 				right: 10px;
 			}
+			#add-light {
+				position: absolute;
+				bottom: 20px;
+				z-index: 999;
+				left: 20px;
+				color: #ccc;
+			}
+			#add-light:hover {
+				cursor: pointer;
+				color: white;
+			}
 
 			#caminfo {
 				position: absolute;
@@ -192,18 +203,18 @@
 			if(location.host.includes('hf.space')) document.body.classList.add('nohf');
 		</script>
 		<div id="info">
-			<h3 class="nohf">WebGL 3D Gaussian Splat Viewer</h3>
+			<h3 class="nohf">Relightable Gaussian Splats</h3>
 			<p>
 			<small class="nohf">
-				By <a href="https://twitter.com/antimatter15">Kevin Kwok</a>.
+				By <a href="">T Karan Balakumar</a>, based on the viewer by <a href="https://github.com/antimatter15">Kevin Kwok</a>.
 				Code on
-				<a href="https://github.com/antimatter15/splat">Github</a
+				<a href="https://github.com/KaranBalakumar/WebGL_relightable_splat">Github</a
 				>.
 			</small>
 		</p>
 
 			<details>
-			<summary>Use mouse or arrow keys to navigate.</summary>
+			<summary>Use mouse or arrow keys to navigate. M to toggle lighting.</summary>
 
 <div id="instructions">movement (arrow keys)
 - left/right arrow keys to strafe side to side
@@ -225,6 +236,8 @@ trackpad
 mouse
 - click and drag to orbit
 - right click (or ctrl/cmd key) and drag up/down to move
+- click and drag a light to move it in X and Y axes
+- right click and drag a light to move it in Z axis
 
 touch (mobile)
 - one finger to orbit
@@ -236,15 +249,17 @@ gamepad
 - if you have a game controller connected it should work
 
 other
+- press M to switch between lighting mode and no lighting
+- press N to switch between explicit normals and pseudo-normals
 - press 0-9 to switch to one of the pre-loaded camera views
 - press '-' or '+'key to cycle loaded cameras
 - press p to resume default animation
-- drag and drop .ply file to convert to .splat
+- drag and drop .ply file to convert to .lsplat
 - drag and drop cameras.json to load cameras
 </div>
 
 		</details>
-			
+
 		</div>
 
 		<div id="progress"></div>
@@ -265,6 +280,10 @@ other
 			</div>
 		</div>
 		<canvas id="canvas"></canvas>
+
+		<div id="add-light">
+			💡 Add Light
+		</div>
 
 		<div id="quality">
 			<span id="fps"></span>
