@@ -2,6 +2,8 @@
 
 A 3D Gaussian Splat viewer with dynamic lighting. Based on the [splat](https://github.com/antimatter15/splat) viewer by [antimatter15](https://github.com/antimatter15).
 
+[relightable_splat.webm](https://github.com/user-attachments/assets/aaa1dca6-ef1f-4bdd-a2ca-dabebb11b9bf)
+
 ## controls
 
 movement (arrow keys)
@@ -13,6 +15,7 @@ movement (arrow keys)
 camera angle (wasd)
 
 - `a`/`d` to turn camera left/right
+
 - `w`/`s` to tilt camera up/down
 - `q`/`e` to roll camera counterclockwise/clockwise
 - `i`/`k` and `j`/`l` to orbit
