@@ -1289,7 +1289,7 @@ async function main() {
         carousel = false;
     } catch (err) {}
     const url = new URL(
-        params.get("url") || "materials.lsplat",
+        params.get("url") || "lego.lsplat",
         "https://raw.githubusercontent.com/KaranBalakumar/WebGL_relightable_splat/main/assets/"
     );
     const req = await fetch(url, {
