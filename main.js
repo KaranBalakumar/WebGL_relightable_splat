@@ -1289,8 +1289,8 @@ async function main() {
         carousel = false;
     } catch (err) {}
     const url = new URL(
-        params.get("url") || "./assets/banana.lsplat",
-        "https://raw.githubusercontent.com/KaranBalakumar/WebGL_relightable_splat/tree/main/"
+        params.get("url") || "materials.lsplat",
+        "https://raw.githubusercontent.com/KaranBalakumar/WebGL_relightable_splat/main/assets/"
     );
     const req = await fetch(url, {
         mode: "cors", // no-cors, *cors, same-origin
